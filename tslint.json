@@ -1,0 +1,26 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint-config-airbnb", "tslint-eslint-rules"
+    ],
+    "jsRules": {},
+    "rules": {
+        "deprecation": false,
+        "eofline": false,
+        "jsdoc-format": false,
+        "member-access": false,
+        "no-any": false,
+        "no-boolean-literal-compare": false,
+        "no-inferrable-types": false,
+        "no-internal-module": false,
+        "no-namespace": false,
+        "no-unbound-method": false,
+        "no-unsafe-any": false,
+        "prefer-for-of": false,
+        "prefer-function-over-method": false,
+        "restrict-plus-operands": false,
+        "strict-boolean-expressions": false,
+        "strict-type-predicates": false
+    },
+    "rulesDirectory": []
+}
