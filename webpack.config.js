@@ -1,5 +1,5 @@
 module.exports = {
-  entry: './lesson-3-ts-interface-class/app.ts',
+  entry: './lesson-4-ts-types-configuration/interfaces.ts',
   output: {
     filename: 'app.js',
     path: __dirname + './dist',
