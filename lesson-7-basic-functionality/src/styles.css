@@ -1,0 +1,21 @@
+/* Add application styles & imports to this file! */
+button {
+  cursor: pointer;
+  background: #13ac27;
+  border: 0;
+  border-radius: 2px;
+  padding: 0.5rem 2rem;
+  text-align: center;
+  color: #fff;
+  margin-right: 1rem;
+  margin-top: 1rem;
+}
+
+p {
+  margin: 0.1rem;
+}
+
+h4{
+  border-bottom: 0.1rem solid #91420d;
+  color: #91420d;
+}
