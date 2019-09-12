@@ -1,0 +1,6 @@
+<h3>Active</h3>
+<p *ngFor="let activeUser of activeUsers" 
+[hidden]="!activeUser.isActive" 
+(click)="toggle(activeUser)">
+ActiveUser
+</p>
