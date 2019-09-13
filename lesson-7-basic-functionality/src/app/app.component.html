@@ -1,0 +1,13 @@
+<div>  
+  <h4>Odd</h4>
+  <app-even-number *ngFor="let currentNumber of arrayNumber"
+    [items]= 'currentNumber'>
+  </app-even-number>
+    <h4>Even</h4>
+    <app-odd-number *ngFor="let currentNumber of arrayNumber"
+    [items]= 'currentNumber'>
+  </app-odd-number>
+  <app-timer-control 
+    (edit)="handleEdit($event)">
+  </app-timer-control> 
+</div>
