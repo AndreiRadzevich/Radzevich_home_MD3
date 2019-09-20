@@ -1,0 +1,104 @@
+<form (ngSubmit)="handleSubmit(form.value, form.valid)" #form="ngForm" novalidate>
+ 
+  <div ngModelGroup="userData" #userData="ngModelGroup" class="group">
+    <div class="title">
+     User Data: 
+    </div>
+
+    <div>
+    UserName:
+      <input 
+        name="userName" 
+        required  
+        [(ngModel)]="detail.userData.userName" 
+        #userName="ngModel">
+      <p *ngIf="userName.invalid && (userName.dirty || userName.touched)" class="error">
+        UserName is required
+      </p>
+    </div>
+
+    <button (click)="setUserName()"> 
+      Suggest UserName 
+    </button>
+
+    <div>
+      E-mail:
+      <input 
+        type="email" 
+        name="email"  
+        [ngModel]="detail?.userData.email" 
+        required 
+        pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,6})+$"
+        #email="ngModel" >
+      <p *ngIf="email.invalid && (email.dirty || email.touched)" class="error">
+        Email is required
+      </p>
+    </div>
+    <p *ngIf="userData.invalid && (userData.dirty || userData.touched)" class="error">
+      UserData is invalid. 
+    </p>
+  </div> 
+
+  <div>
+    Secret questions:
+    <select
+      name="secret"
+      [ngModel]="detail?.secret">
+      <option
+        *ngFor="let item of secret"
+        [value]="item.key"
+        [selected]="item.key === detail?.secret">
+        {{ item.value }}
+      </option>
+    </select>
+  </div>
+
+  <textarea
+    name="questionAnswer"
+    required 
+    #area = "ngModel"
+    [ngModel]="detail?.questionAnswer"> 
+  </textarea>
+  <p *ngIf="area.invalid && (area.dirty || area.touched)" class="error">
+    Answer is required
+  </p>
+  <br>
+  <p>
+    Your answer:{{area.value}}
+  </p> 
+
+  <div>
+    <label>
+      <input 
+        type="radio"
+        value="male"
+        name="gender"
+        #gender = "ngModel"
+        [ngModel]="detail?.gender"
+      >
+      male
+    </label>
+    <label>
+      <input 
+        type="radio"
+        required 
+        value="female"
+        name="gender"
+        #gender = "ngModel"
+        [ngModel]="detail?.gender"
+      >
+      female
+    </label>
+    <p *ngIf="gender.invalid" class="error">
+      You have to decide)
+    </p>
+  </div>
+
+  <button type="submit" [disabled]="form.invalid">
+    Update user
+  </button>
+
+  <div>
+    {{ form.value | json }}
+  </div>
+</form>
