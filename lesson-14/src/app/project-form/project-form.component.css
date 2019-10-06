@@ -1,0 +1,25 @@
+.form-group{
+  flex: 1 0;
+  padding: 0 10px;
+}
+
+input.ng-invalid.ng-touched{
+  border: 1px solid red;
+}
+
+input.ng-pending{
+  border: 1px solid yellow;
+}
+
+.error {
+  background: #B52D30;
+  color: #fff;
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+  border-radius: 0 0 3px 3px;
+  line-height: 1;
+  padding: 6px 10px;
+  margin-top: -1px;
+
+}

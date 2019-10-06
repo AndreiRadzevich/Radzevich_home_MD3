@@ -1,0 +1,36 @@
+<div>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Project name</label>
+      <input type="text" id="name" placeholder="Project name" formControlName="projectName">
+    </div>
+    <div class="error" *ngIf="form.controls['projectName'].invalid &&
+     form.controls['projectName'].touched">
+      Project name is required
+    </div>
+
+    <div class="form-group">
+      <label for="address">Email</label>
+      <input type="text" id="address" placeholder="Email" formControlName="mail">
+    <div class="error" *ngIf="form.controls['mail'].invalid && form.controls['mail'].touched">
+      Email is required or incorrect email
+    </div>
+    </div>
+
+    <div class="form-group">
+      <label for="status">Project Status</label>
+      <select id="status" formControlName="projectStatusDropdown">
+        <option value="">Select status</option>
+        <option *ngFor="let statusItem of status" [value]="statusItem">
+          {{ statusItem }}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <button type="submit" [disabled]="form.invalid">
+        Submit
+      </button>
+    </div>
+  </form>
+</div>
