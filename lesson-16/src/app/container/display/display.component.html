@@ -1,0 +1,10 @@
+<div class= "container" *ngFor="let item of list; let i = index"> 
+  <div>
+    {{item.text}}
+  </div>
+  <div>
+    {{item.date}}
+  </div>
+  <div class="close" (click)="deleteLog(i)">
+  </div>
+</div>
